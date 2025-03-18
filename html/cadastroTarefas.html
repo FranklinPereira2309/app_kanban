@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="py-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Tarefas</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="container-nav">
+        <h1><a href="/index.html">Kanban Digital</a></h1>
+        <ul class="content-ul">
+            <li><a href="/html/cadastroUsuarios.html">Cadastro de Usuário</a></li>
+            <li><a href="/html/cadastroTarefas.html">Cadastro de Tarefas</a></li>
+            <li><a href="/html/gerenciarTarefas.html">Gerenciamento de tarefas</a></li>
+        </ul>
+    </div>
+    
+    <div class="container-cadastro">
+        <h1>Cadastro de Tarefas</h1>
+        <label for="input-descricao">Descrição</label>
+        <input type="text" name="input-descricao" id="input-descricao" maxlength="50" placeholder="Digite uma descrição">
+        <label for="input-setor">Setor</label>
+        <input type="text" name="input-setor" id="input-setor" maxlength="30" placeholder="Digite um setor">
+        <label for="select-usuario">Usuário</label>
+        <select name="select-usuario" id="select-usuario">
+            <option hidden value="">Selecione um Usuário</option>
+        </select>
+        <label for="select-prioridade">Prioridade</label>
+        <select name="select-prioridade" id="select-prioridade">
+            <option hidden value="">Selecione uma Prioridade</option>
+            <option value="baixa">Baixa</option>
+            <option value="media">Média</option>
+            <option value="alta">Alta</option>
+        </select>
+        <button onclick="cadastrarTarefa()">Cadastrar</button>
+    </div>
+    <script src="/js/tarefa.js"></script>
+</body>
+
+</html>

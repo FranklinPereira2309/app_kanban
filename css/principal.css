@@ -1,0 +1,51 @@
+@import url('/css/style.css');
+
+.div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 200px;
+  gap: 20px;
+
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 16px;
+  margin: 8px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+  animation: scrollText 20s linear infinite;
+}
+
+@keyframes scrollText {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.bem-vindo {
+
+  height: 100%;
+  margin-top: 60px;
+}
+
+.bem-vindo h1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  padding-bottom: 30px;
+}

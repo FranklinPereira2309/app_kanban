@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Tarefas</title>
+    <link rel="stylesheet" href="/css/gerenciar.css">
+</head>
+
+<body> 
+    <div id="modal" class="modal-container" style="display: none;">
+        <div class="modal-content">
+            <h1>Editar Tarefa</h1>
+            <label for="input-descricao">Descrição</label>
+            <input type="text" name="input-descricao" id="input-descricao" maxlength="50" placeholder="Digite uma descrição">
+            <label for="input-setor">Setor</label>
+            <input type="text" name="input-setor" id="input-setor" maxlength="30" placeholder="Digite um setor">
+            <label for="select-editar-usuario">Usuário</label>
+            <input name="select-editar-usuario" readonly id="input-editar-usuario">                
+            <label for="select-prioridade">Prioridade</label>
+            <select name="select-prioridade" id="select-prioridade">
+                <option hidden value="">Selecione uma Prioridade</option>
+                <option value="baixa">Baixa</option>
+                <option value="media">Média</option>
+                <option value="alta">Alta</option>
+            </select>
+            <div class="buttons">
+                <button type="button" onclick="salvarEditar()">Salvar</button>
+                <button type="button" id="editar-tarefas">Fechar</button>
+            </div>
+        </div>
+    </div>      
+    
+    <div class="container-nav">
+        <h1><a href="/index.html">Kanban Digital</a></h1>
+        <ul class="content-ul">
+            <li><a href="/html/cadastroUsuarios.html">Cadastro de Usuário</a></li>
+            <li><a href="/html/cadastroTarefas.html">Cadastro de Tarefas</a></li>
+            <li><a href="/html/gerenciarTarefas.html">Gerenciamento de tarefas</a></li>
+        </ul>
+    </div>
+
+    <h1>Tarefas</h1>
+    <div class="minhas-tarefas">
+        <div class="container-tarefas">
+            <div class="aFazer" id="aFazer">
+                <h2>A Fazer</h2>
+                <div class="content-tarefa" id="content-aFazer">
+                    <div style="display: none;" class="tarefa" id="tarefa">                     
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="fazendo" id="fazendo">
+                <h2>Fazendo</h2>
+                <div class="content-tarefa" id="content-fazendo">
+                    <div style="display: none;" class="tarefa" id="tarefa">    
+                        
+
+                    </div>                    
+                </div>
+            </div>
+            <div class="pronto" id="pronto">
+                <h2>Pronto</h2>
+                <div class="content-tarefa" id="content-pronto">
+                    <div style="display: none;"   class="tarefa" id="tarefa">
+
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    <script src="/js/gerenciar.js"></script>
+
+</body>
+
+</html>

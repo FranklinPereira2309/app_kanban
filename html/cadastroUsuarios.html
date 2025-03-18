@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Usuário</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="container-nav">
+        <h1><a href="/index.html">Kanban Digital</a></h1>
+        <ul class="content-ul">
+            <li><a href="/html/cadastroUsuarios.html">Cadastro de Usuário</a></li>
+            <li><a href="/html/cadastroTarefas.html">Cadastro de Tarefas</a></li>
+            <li><a href="/html/gerenciarTarefas.html">Gerenciamento de tarefas</a></li>
+        </ul>
+    </div>    
+    <div class="container-cadastro">
+        <h1>Cadastro de Usuário</h1>
+        <label for="input-usuario">Usuário</label>
+        <input type="text" name="input-usuario" id="input-nome" maxlength="50" placeholder="Digite um nome">
+        <label for="input-email">Email</label>
+        <input type="email" name="input-email" id="input-email" maxlength="40" placeholder="Digite um email">
+        <button onclick="cadastrarUsuario()">Cadastrar</button>
+    </div>    
+    <script src="/js/usuario.js"></script>
+</body>
+
+</html>
