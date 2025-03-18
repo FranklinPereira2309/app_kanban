@@ -17,7 +17,8 @@ function cadastrarTarefa() {
     const setor = document.querySelector('#input-setor').value;
     const prioridade = document.querySelector('#select-prioridade').value;
     
-    const url = 'http://localhost:3001/tarefas';
+    //const url = 'http://localhost:3001/tarefas';
+    const url = 'https://api-kanban-dmn5.onrender.com/tarefas';
 
     if (!descricao || !setor || !prioridade || !id_usuario) {
         return window.alert('Preencha todos os campos!');
@@ -71,7 +72,8 @@ function cadastrarTarefa() {
 function consultarUsuario() {
     const selectUsuario = document.querySelector('#select-usuario');
 
-    const url = 'http://localhost:3001/usuarios';
+    //const url = 'http://localhost:3001/usuarios';
+    const url = 'https://api-kanban-dmn5.onrender.com/usuarios';
 
     fetch(url, {
         method: 'GET',
