@@ -2,7 +2,7 @@ function cadastrarUsuario() {
     const nome = document.querySelector('#input-nome').value;
     const email = document.querySelector('#input-email').value;
     //const url = 'http://localhost:3001/usuarios';
-    const url = 'https://api-kanban-dmn5.onrender.com/usuarios';
+    const url = 'https://api-kanban-pi83.onrender.com/usuarios';
 
     if (!nome || !email) {
         return window.alert('Preencha todos os campos!');

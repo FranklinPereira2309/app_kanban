@@ -37,7 +37,7 @@ document.querySelector('#pronto').addEventListener('change', (e) => {
 
 function mudarStatusTarefa(id) {
     //const url = `http://localhost:3001/status_tarefas/${id}`;
-    const url = `https://api-kanban-dmn5.onrender.com/status_tarefas/${id}`;
+    const url = `https://api-kanban-pi83.onrender.com/status_tarefas/${id}`;
     if(!_status) {
         return window.alert('Você deve primeiro selecionar um status!');
     }
@@ -82,7 +82,7 @@ function excluirTarefa(id) {
     if (window.confirm('Deseja excluir a tarefa atual?')) {
 
         //const url = `http://localhost:3001/tarefas/${id}`;
-        const url = `https://api-kanban-dmn5.onrender.com/tarefas/${id}`;
+        const url = `https://api-kanban-pi83.onrender.com/tarefas/${id}`;
 
         fetch(url, {
             method: 'DELETE',
@@ -129,7 +129,7 @@ function exibirEditarTarefa(id) {
     idTarefa = id;
 
     //const url = `http://localhost:3001/tarefas/${id}`;
-    const url = `https://api-kanban-dmn5.onrender.com/tarefas/${id}`;
+    const url = `https://api-kanban-pi83.onrender.com/tarefas/${id}`;
 
     fetch(url, {
         method: 'GET',
@@ -175,7 +175,7 @@ function salvarEditar() {
     }
 
     //const url = 'http://localhost:3001/tarefas';
-    const url = 'https://api-kanban-dmn5.onrender.com/tarefas';
+    const url = 'https://api-kanban-pi83.onrender.com/tarefas';
 
     fetch(url, {
         method: 'PUT',
@@ -216,7 +216,7 @@ function salvarEditar() {
 
 function consultarTarefas() {
     //const url = 'http://localhost:3001/tarefas';
-    const url = 'https://api-kanban-dmn5.onrender.com/tarefas';
+    const url = 'https://api-kanban-pi83.onrender.com/tarefas';
 
     fetch(url, {
         method: 'GET',
