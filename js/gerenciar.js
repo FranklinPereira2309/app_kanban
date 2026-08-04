@@ -287,6 +287,17 @@ function exibirTarefas() {
               
             `
             div.classList.add('card');
+
+            const prioridadeStr = tarefa.prioridade ? tarefa.prioridade.toLowerCase() : '';
+            if (prioridadeStr === 'alta') {
+                div.style.backgroundColor = 'red';
+                div.style.color = 'white'; 
+            } else if (prioridadeStr === 'média' || prioridadeStr === 'media') {
+                div.style.backgroundColor = 'orange';
+            } else if (prioridadeStr === 'baixa') {
+                div.style.backgroundColor = 'green';
+                div.style.color = 'white'; 
+            }
             btnMudarStatus.textContent = 'Salvar Status';
             btnMudarStatus.addEventListener('click', () => mudarStatusTarefa(tarefa.id));
             div.appendChild(btnMudarStatus);
@@ -341,6 +352,17 @@ function exibirTarefas() {
               
             `
             div.classList.add('card');
+
+            const prioridadeStr = tarefa.prioridade ? tarefa.prioridade.toLowerCase() : '';
+            if (prioridadeStr === 'alta') {
+                div.style.backgroundColor = 'red';
+                div.style.color = 'white'; // Adicionado para melhor contraste
+            } else if (prioridadeStr === 'média' || prioridadeStr === 'media') {
+                div.style.backgroundColor = 'orange';
+            } else if (prioridadeStr === 'baixa') {
+                div.style.backgroundColor = 'green';
+                div.style.color = 'white'; // Adicionado para melhor contraste
+            }
             btnMudarStatus.textContent = 'Salvar Status';
             btnMudarStatus.addEventListener('click', () => mudarStatusTarefa(tarefa.id));
             div.appendChild(btnMudarStatus);
@@ -391,6 +413,17 @@ function exibirTarefas() {
               
             `
             div.classList.add('card');
+
+            const prioridadeStr = tarefa.prioridade ? tarefa.prioridade.toLowerCase() : '';
+            if (prioridadeStr === 'alta') {
+                div.style.backgroundColor = 'red';
+                div.style.color = 'white'; // Adicionado para melhor contraste
+            } else if (prioridadeStr === 'média' || prioridadeStr === 'media') {
+                div.style.backgroundColor = 'orange';
+            } else if (prioridadeStr === 'baixa') {
+                div.style.backgroundColor = 'green';
+                div.style.color = 'white'; // Adicionado para melhor contraste
+            }
             btnMudarStatus.textContent = 'Salvar Status';
             btnMudarStatus.addEventListener('click', () => mudarStatusTarefa(tarefa.id));
             div.appendChild(btnMudarStatus);
