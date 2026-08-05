@@ -1,15 +1,5 @@
 
-let id_usuario = document.querySelector('#select-usuario').value;
 
-document.addEventListener('DOMContentLoaded', ()=> {
-    
-    consultarUsuario();
-    
-});
-
-document.querySelector('#select-usuario').addEventListener('change', (e)=> {
-    id_usuario = Number(e.target.value);
-});
 
 function cadastrarTarefa() {
     
@@ -26,13 +16,12 @@ function cadastrarTarefa() {
         return window.location.href = '/html/login.html';
     }
 
-    if (!descricao || !setor || !prioridade || !id_usuario) {
+    if (!descricao || !setor || !prioridade) {
         return window.alert('Preencha todos os campos!');
     }
 
 
     const novaTarefa = {
-        usuario_id: id_usuario,
         descricao,
         setor,
         prioridade
@@ -73,48 +62,9 @@ function cadastrarTarefa() {
 
         document.querySelector('#input-descricao').value = '';
         document.querySelector('#input-setor').value = '';
-        document.querySelector('#select-usuario').value = '';
         document.querySelector('#select-prioridade').value = '';
 }
-function consultarUsuario() {
-    const selectUsuario = document.querySelector('#select-usuario');
 
-    //const url = 'http://localhost:3001/usuarios';
-    const url = 'https://api-kanban-pi83.onrender.com/usuarios';
-
-    const token = localStorage.getItem('token');
-    fetch(url, {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}`
-        }
-    })
-        .then(response => response.json())
-        .then(data => {
-            const erro = data.erro;
-            const mensagem = data.mensagem;
-
-            if (erro) {
-                return window.alert(erro);
-            }
-            else if (mensagem) {
-                return window.alert(mensagem);
-            }
-
-            const usuarios = data;
-
-            usuarios.forEach(usuario => {
-                const option = document.createElement('option');
-                option.value = usuario.id;
-                option.textContent = usuario.nome;
-
-                selectUsuario.appendChild(option);
-            });
-
-
-        })
-}
 
 
 
