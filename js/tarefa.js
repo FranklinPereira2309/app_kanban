@@ -1,5 +1,12 @@
+let id_usuario = '';
 
+document.addEventListener('DOMContentLoaded', ()=> {
+    consultarUsuariosTarefas();
+});
 
+document.querySelector('#select-usuario')?.addEventListener('change', (e)=> {
+    id_usuario = Number(e.target.value);
+});
 
 function cadastrarTarefa() {
     
@@ -16,12 +23,13 @@ function cadastrarTarefa() {
         return window.location.href = '/html/login.html';
     }
 
-    if (!descricao || !setor || !prioridade) {
-        return window.alert('Preencha todos os campos!');
+    if (!descricao || !setor || !prioridade || !id_usuario) {
+        return window.alert('Preencha todos os campos e selecione o usuário!');
     }
 
 
     const novaTarefa = {
+        usuario_id: id_usuario,
         descricao,
         setor,
         prioridade
@@ -62,7 +70,36 @@ function cadastrarTarefa() {
 
         document.querySelector('#input-descricao').value = '';
         document.querySelector('#input-setor').value = '';
+        document.querySelector('#select-usuario').value = '';
         document.querySelector('#select-prioridade').value = '';
+}
+
+function consultarUsuariosTarefas() {
+    const selectUsuario = document.querySelector('#select-usuario');
+    if(!selectUsuario) return;
+
+    //const url = 'http://localhost:3001/usuarios_tarefas';
+    const url = 'https://api-kanban-pi83.onrender.com/usuarios_tarefas';
+
+    const token = localStorage.getItem('token');
+    fetch(url, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        }
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (data.mensagem) return;
+            const usuarios = data;
+            usuarios.forEach(usuario => {
+                const option = document.createElement('option');
+                option.value = usuario.id;
+                option.textContent = usuario.nome;
+                selectUsuario.appendChild(option);
+            });
+        });
 }
 
 

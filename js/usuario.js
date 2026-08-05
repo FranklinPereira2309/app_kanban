@@ -64,6 +64,52 @@ function cadastrarUsuario() {
         .catch(erro => console.log(erro));
 }
 
+function cadastrarUsuarioTarefa() {
+    const nome = document.querySelector('#input-nome').value;
+    const email = document.querySelector('#input-email').value;
+    const token = localStorage.getItem('token');
+    
+    //const url = 'http://localhost:3001/usuarios_tarefas';
+    const url = 'https://api-kanban-pi83.onrender.com/usuarios_tarefas';
+
+    if (!token) {
+        window.alert('Você precisa estar logado para cadastrar um usuário de tarefa!');
+        return window.location.href = '/html/login.html';
+    }
+
+    if (!nome || !email) {
+        return window.alert('Preencha todos os campos!');
+    }
+
+    const novoUsuarioTarefa = {
+        nome: capitalizePalavas(nome),
+        email: email.toLowerCase()
+    }
+
+    fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify(novoUsuarioTarefa)
+    })
+        .then(response => {
+            if (response.status === 201) {
+                window.alert('Usuário Cadastrado com Sucesso!');
+                document.querySelector('#input-nome').value = '';
+                document.querySelector('#input-email').value = '';
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.mensagem) {
+                return window.alert(data.mensagem);
+            }
+        })
+        .catch(erro => console.log(erro));
+}
+
 function loginUsuario() {
     const email = document.querySelector('#input-email-login').value;
     const senha = document.querySelector('#input-senha-login').value;

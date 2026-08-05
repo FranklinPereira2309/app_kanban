@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro Usuário</title>
+    <title>Cadastro Conta Login</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -20,12 +20,14 @@
         </ul>
     </div>    
     <div class="container-cadastro">
-        <h1>Cadastro de Usuário (Equipe)</h1>
-        <label for="input-usuario">Nome do Usuário</label>
-        <input type="text" name="input-usuario" id="input-nome" maxlength="50" placeholder="Digite um nome">
+        <h1>Criar Conta</h1>
+        <label for="input-usuario">Nome</label>
+        <input type="text" name="input-usuario" id="input-nome" maxlength="50" placeholder="Digite seu nome">
         <label for="input-email">Email</label>
-        <input type="email" name="input-email" id="input-email" maxlength="40" placeholder="Digite um email">
-        <button onclick="cadastrarUsuarioTarefa()">Cadastrar</button>
+        <input type="email" name="input-email" id="input-email" maxlength="40" placeholder="Digite seu email">
+        <label for="input-senha">Senha</label>
+        <input type="password" name="input-senha" id="input-senha" maxlength="40" placeholder="Digite uma senha">
+        <button onclick="cadastrarUsuario()">Criar Conta</button>
     </div>    
     <script src="/js/usuario.js"></script>
 </body>
