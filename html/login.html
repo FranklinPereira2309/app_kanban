@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Kanban Digital</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="container-nav">
+        <h1><a href="/index.html">Kanban Digital</a></h1>
+        <ul class="content-ul">
+            <li><a href="/html/login.html" id="link-login">Login</a></li>
+            <li><a href="#" id="link-logout" style="display:none;" onclick="logoutUsuario()">Sair</a></li>
+            <li><a href="/html/cadastroUsuarios.html">Cadastro de Usuário</a></li>
+            <li><a href="/html/cadastroTarefas.html">Cadastro de Tarefas</a></li>
+            <li><a href="/html/gerenciarTarefas.html">Gerenciamento de tarefas</a></li>
+        </ul>
+    </div>    
+    <div class="container-cadastro">
+        <h1>Login</h1>
+        <label for="input-email-login">Email</label>
+        <input type="email" name="input-email-login" id="input-email-login" maxlength="40" placeholder="Digite seu email">
+        <label for="input-senha-login">Senha</label>
+        <input type="password" name="input-senha-login" id="input-senha-login" maxlength="40" placeholder="Digite sua senha">
+        <button onclick="loginUsuario()">Entrar</button>
+    </div>    
+    <script src="/js/usuario.js"></script>
+</body>
+
+</html>

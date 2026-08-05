@@ -46,10 +46,12 @@ function mudarStatusTarefa(id) {
         status: _status
     }
 
+    const token = localStorage.getItem('token');
     fetch(url, {
         method: 'PUT',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
         },
         body: JSON.stringify(novoStatus)
 
@@ -84,10 +86,12 @@ function excluirTarefa(id) {
         //const url = `http://localhost:3001/tarefas/${id}`;
         const url = `https://api-kanban-pi83.onrender.com/tarefas/${id}`;
 
+        const token = localStorage.getItem('token');
         fetch(url, {
             method: 'DELETE',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
             }
 
         })
@@ -131,10 +135,12 @@ function exibirEditarTarefa(id) {
     //const url = `http://localhost:3001/tarefas/${id}`;
     const url = `https://api-kanban-pi83.onrender.com/tarefas/${id}`;
 
+    const token = localStorage.getItem('token');
     fetch(url, {
         method: 'GET',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
         }
 
     })
@@ -177,10 +183,12 @@ function salvarEditar() {
     //const url = 'http://localhost:3001/tarefas';
     const url = 'https://api-kanban-pi83.onrender.com/tarefas';
 
+    const token = localStorage.getItem('token');
     fetch(url, {
         method: 'PUT',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
         },
         body: JSON.stringify(tarefaEditada)
 
@@ -218,10 +226,16 @@ function consultarTarefas() {
     //const url = 'http://localhost:3001/tarefas';
     const url = 'https://api-kanban-pi83.onrender.com/tarefas';
 
+    const token = localStorage.getItem('token');
+    if (!token) {
+        window.alert('Você precisa estar logado!');
+        return window.location.href = '/html/login.html';
+    }
     fetch(url, {
         method: 'GET',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
         }
     })
         .then(response => response.json())
